@@ -4,6 +4,7 @@ camoBlack.visible = true;
 // Create a new path once, when the script is executed:
 var myPath = new Path();
 myPath.strokeColor = 'blue';
+myPath.strokeWidth = '2px';
 
 // This function is called whenever the user
 // clicks the mouse in the view:
