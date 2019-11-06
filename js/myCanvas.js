@@ -1,4 +1,5 @@
 var camoBlack = paper.project.importSVG("svg/camo_90.svg", onLoad);
+camoBlack.visible = true;
 
 // Create a new path once, when the script is executed:
 var myPath = new Path();
