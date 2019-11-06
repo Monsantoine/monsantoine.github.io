@@ -1,9 +1,9 @@
-var camoBlack = paper.project.importSVG("svg/camo_90.svg", onLoad);
+var camoBlack = paper.project.importSVG("svg/camo_90.svg", onLoad());
 camoBlack.visible = true;
 
 // Create a new path once, when the script is executed:
 var myPath = new Path();
-myPath.strokeColor = 'red';
+myPath.strokeColor = 'blue';
 
 // This function is called whenever the user
 // clicks the mouse in the view:
