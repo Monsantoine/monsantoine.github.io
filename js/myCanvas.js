@@ -1,3 +1,5 @@
+var camoBlack = paper.project.importSVG("svg/camo_90.svg", onLoad);
+
 var text = new PointText({
     position: view.center + [0, 200],
     fillColor: 'black',
