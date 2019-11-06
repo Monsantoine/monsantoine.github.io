@@ -1,4 +1,4 @@
-var camoBlack = paper.project.import("svg/camo_90.svg");
+//var camoBlack = paper.project.import("svg/camo_90.svg");
 
 var text = new PointText({
     position: view.center + [0, 200],
