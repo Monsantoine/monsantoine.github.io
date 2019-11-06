@@ -3,14 +3,9 @@ body {
     height: 100%;
 }
 
-.test {
-  background-color: red;
-  height: 10px;
-}
-
 h1 {
-  color: yellow;
-  mix-blend-mode: multiply;
+  color: red;
+  mix-blend-mode: darken;
 }
 
 #myCanvas {
@@ -19,7 +14,6 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
 }
 
 /* Scale canvas with resize attribute to full size */
