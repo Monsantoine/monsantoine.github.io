@@ -1,23 +1,62 @@
-html,
-body {
-    height: 100%;
-}
+html{
+      height: 100%;
+    }
 
-h1 {
-  color: blue;
-  mix-blend-mode: darken;
-}
+    body{
+      background-color: #555;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
 
-#myCanvas {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+    @media screen and (max-width: 1281px) {
+      body {
+        background-image:  url('splash_m.jpg');
+      }
+    }
 
-/* Scale canvas with resize attribute to full size */
-canvas[resize] {
-    width: 100%;
-    height: 100%;
-}
+    @media screen and (max-width: 760px) {
+      body {
+        background-image:  url('splash_s.jpg');
+      }
+    }
+
+    @media screen and (min-width: 1281px),
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and ( min--moz-device-pixel-ratio: 2),
+    screen and ( min-device-pixel-ratio: 2),
+    screen and ( min-resolution: 192dpi),
+    screen and ( min-resolution: 2dppx){
+          body {
+            background-image:  url('splash_l.jpg');
+          }
+    }
+
+    ::selection {
+      background: #A64DFF;
+    }
+
+    ::-moz-selection {
+      background: #A64DFF;
+    }
+
+    svg{
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+      background-size: cover;
+    }
+
+    .filtered{
+      filter: url(#filter);
+      -webkit-filter: url(#filter);
+      color: #0ff;
+      fill: #f0f;
+      font-family: 'Turret Road', cursive;
+      font-size: 8em;
+    }

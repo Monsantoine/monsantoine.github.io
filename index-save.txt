@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Antoine Lugon</title>
+  <link rel="stylesheet" href="css/master.css">
+  <script type="text/javascript" src="js/paper-full.min.js"></script>
+</head>
+
+<body>
+  <h1>Antoine Lugon</h1>
+  <h2>Portfolio</h2>
+  <canvas id="myCanvas" resize></canvas>
+  <script type="text/paperscript" canvas="myCanvas">
+/*
+  var squareb = new Path.Rectangle({
+      position: view.center,
+      size: 300,
+      fillColor: 'pink',
+  	  //strokeColor: 'black',
+      shadowOffset: 5,
+      shadowBlur: 10,
+      shadowColor: 'black'
+  });*/
+
+  var fleche;
+
+    project.importSVG("https://upload.wikimedia.org/wikipedia/commons/7/76/Sakai_Kamon.svg", {
+    onLoad : function (item) {
+      item.visible = false;
+      item.center = view.center;
+  	//item.parent = 'originals';
+      fleche = item;
+  	fleche.fillColor = 'pink';
+  	//fleche.strokeColor = 'black';
+  	//fleche.strokeWidth = 1;
+    fleche.shadowColor = 'black';
+    fleche.shadowBlur = 10;
+    fleche.shadowOffset = 5;
+    }
+  });
+
+    var rasterF = fleche.rasterize(10);
+/*
+  function onMouseMove(event) {
+      mousePos.position = event.point;
+  }
+
+  function onFrame(event) {
+    fleche.position = mousePos.position;
+    //squareb.unite(fleche).removeOnMove();
+  }
+
+  result.onClick(event) = function(event){
+    this.rasterize();
+  }
+  function onResize() {
+      text.position = view.center + [0, 200];
+      square.position = view.center;
+  }*/
+
+  var myFrame = new Path.Rectangle({
+    position: view.center,
+    size: 300,
+    fillColor: 'pink',
+    shadowOffset: 4,
+    shadowBlur: 4
+  });
+  </script>
+</body>
+
+</html>
