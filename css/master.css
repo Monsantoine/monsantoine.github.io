@@ -1,62 +1,109 @@
-html{
-      height: 100%;
-    }
+html {
+  height: 100%;
+}
 
-    body{
-      background-color: #555;
-      background-size: cover;
-      background-attachment: fixed;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-    }
+body {
+  background-color: #444;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 
-    @media screen and (max-width: 1281px) {
-      body {
-        background-image:  url('splash_m.jpg');
-      }
-    }
+@media screen and (max-width: 1281px) {
+  body {
+    background-image: url('splash_m.jpg');
+  }
+}
 
-    @media screen and (max-width: 760px) {
-      body {
-        background-image:  url('splash_s.jpg');
-      }
-    }
+@media screen and (max-width: 760px) {
+  body {
+    background-image: url('splash_s.jpg');
+  }
+}
 
-    @media screen and (min-width: 1281px),
-    screen and (-webkit-min-device-pixel-ratio: 2),
-    screen and ( min--moz-device-pixel-ratio: 2),
-    screen and ( min-device-pixel-ratio: 2),
-    screen and ( min-resolution: 192dpi),
-    screen and ( min-resolution: 2dppx){
-          body {
-            background-image:  url('splash_l.jpg');
-          }
-    }
+@media screen and (min-width: 1281px),
+screen and (-webkit-min-device-pixel-ratio: 2),
+screen and (min--moz-device-pixel-ratio: 2),
+screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+  body {
+    background-image: url('splash_l.jpg');
+  }
+}
 
-    ::selection {
-      background: #A64DFF;
-    }
+::selection {
+  background: #A64DFF;
+}
 
-    ::-moz-selection {
-      background: #A64DFF;
-    }
+::-moz-selection {
+  background: #A64DFF;
+}
 
-    svg{
-      display: block;
-      position: relative;
-      width: 100%;
-      height: 500px;
-      margin: 0 auto;
-      overflow: hidden;
-      background-size: cover;
-    }
+#eMail {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-size: cover;
+  z-index: 2;
+}
 
-    .filtered{
-      filter: url(#filter);
-      -webkit-filter: url(#filter);
-      color: #0ff;
-      fill: #f0f;
-      font-family: 'Turret Road', cursive;
-      font-size: 8em;
-    }
+#diapo {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.filtered {
+  filter: url(#filter);
+  -webkit-filter: url(#filter);
+  color: #0ff;
+  fill: #f0f;
+  font-family: 'Turret Road', sans-serif;
+  font-size: 7em;
+  transition: font-size 5s;
+  /* Animation */
+}
+
+.filtered:hover {
+  text-decoration: underline;
+  font-size: 9em;
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#olympian {
+  position: fixed;
+  left: calc(50% - 256px);
+  bottom: 0;
+  width: 512px;
+  height: 543px;
+  background: url(../img/olympian.png) no-repeat;
+}
+
+#olympian:hover {
+  width: 512px;
+  height: 543px;
+  background: url(../img/olympian-hover.png) no-repeat;
+}
+
+#olympian:active {
+  width: 512px;
+  height: 543px;
+  background: url(../img/olympian-active.png) no-repeat;
+}
+
+#olympian:visited {
+  width: 512px;
+  height: 543px;
+  background: url(../img/olympian-visited.png) no-repeat;
+}
