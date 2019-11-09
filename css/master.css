@@ -71,8 +71,8 @@ screen and (min-resolution: 2dppx) {
 #filtered {
   filter: url(#filter);
   -webkit-filter: url(#filter);
-  color: #0ff;
-  fill: #f0f;
+  color: #fff;
+  fill: #fff;
   font-family: 'Turret Road', sans-serif;
   font-size: 7em;
   transition: font-size 5s;
