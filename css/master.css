@@ -54,7 +54,6 @@ screen and (min-resolution: 2dppx) {
 }
 
 #diapo {
-  display: block;
   position: fixed;
   top: 0;
   width: 100%;
@@ -65,7 +64,7 @@ screen and (min-resolution: 2dppx) {
   z-index: -3;
 }
 
-.filtered {
+#filtered {
   filter: url(#filter);
   -webkit-filter: url(#filter);
   color: #0ff;
