@@ -54,20 +54,21 @@
   <div id="diapo">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
       <filter id="filterImg" width="120%" height="120%">
-        <feTurbulence id="turbuImg" type="turbulence" baseFrequency="0.0003" numOctaves="2" result="turbulence"/>
+        <feTurbulence id="turbuImg" type="turbulence" baseFrequency="0.005" numOctaves="5" result="turbulence"/>
         <feDisplacementMap id="dispImg" in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G" />
         <feConvolveMatrix
-          kernelMatrix="3 0 0
-                        0 0 0.5
-                        0 1 -5"/>
+          kernelMatrix="5 1 5
+                        0 1 0
+                        0 0 -10"/>
       </filter>
-      <image id="imgSVG" xlink:href="img/olympian-hover.png" width="512px" x="50" y="50%" height="530px" filter="url(#filterImg)"></image>
+      <image id="imgSVG" xlink:href="img/me.jpg" width="512px" x="50" y="50%" height="530px" filter="url(#filterImg)"></image>
     </svg>
   </div>
 </body>
 
 <script type="text/javascript">
   const txt = document.querySelector('#filtered');
+  const diapo = document.querySelector('#diapo');
 
   const turbu = document.querySelector('#turbuImg');
   const disp = document.querySelector('#dispImg');
@@ -76,11 +77,11 @@
   const img = document.querySelector('#olympian');
   img.addEventListener("mouseover", e => {
     // highlight the mouseenter target
-    turbu.setAttribute('baseFrequency', '0.05');
+    txt.textContent = 'Télécharger';
   }, false);
 
   img.addEventListener('mouseleave', e => {
-    turbu.setAttribute('baseFrequency', '0.03');
+    txt.textContent = 'antoine@lugon.ch';
   });
 
   window.onmousemove = logMouseMove;
@@ -97,6 +98,11 @@
     imgSVG.setAttribute('x', e.clientX-250);
     //turbu.setAttribute('baseFrequency', e.clientX*0.0001);
   }
+  diapo.onclick = e => {
+    if (event.altKey && event.shiftKey) {
+      turbu.setAttribute('baseFrequency', '0');
+    }
+  };
 </script>
 
 </html>
