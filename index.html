@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <svg version="1.1" id="eMail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg version="1.1" id="eMail" class="mHidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <filter id="filter" width="200%" height="300%" x="-100%" y="-100%">
       <!-- COLORS -->
@@ -49,10 +49,11 @@
     <text id="filtered" x="50%" y="180" text-anchor="middle">antoine@lugon.ch</text>
   </svg>
 
-  <a id="olympian" href="files/Olympian-Regular.otf" download>
+  <a id="olympian" class="mHidden" href="files/Olympian-Regular.otf" download>
   </a>
+
   <div id="diapo">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+    <svg id="svgMe" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" transform="skewY(0) skewX(0)">
       <filter id="filterImg" width="120%" height="120%">
         <feTurbulence id="turbuImg" type="turbulence" baseFrequency="0.005" numOctaves="5" result="turbulence" />
         <feDisplacementMap id="dispImg" in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G" />
@@ -72,11 +73,12 @@
   const turbu = document.querySelector('#turbuImg');
   const disp = document.querySelector('#dispImg');
   const imgSVG = document.querySelector('#imgSVG');
+  const svgMe = document.querySelector('#svgMe');
 
   const img = document.querySelector('#olympian');
   img.addEventListener("mouseover", e => {
     // highlight the mouseenter target
-    txt.textContent = 'Télécharger';
+    txt.textContent = 'merci!';
   }, false);
 
   img.addEventListener('mouseleave', e => {
@@ -93,8 +95,9 @@
     };
     console.log(mousePos);
     //txt.textContent = e.clientX;
-    imgSVG.setAttribute('y', e.clientY - 250);
-    imgSVG.setAttribute('x', e.clientX - 250);
+    //svgMe.setAttribute('transform', e.clientY - 250);
+    //svgMe.setAttribute('x', e.clientX - 250);
+    imgSVG.setAttribute('transform', 'skewY(' + (e.clientY/10 + 500) + ') skewX(' + (e.clientX/10 + 500) + ')');
     //turbu.setAttribute('baseFrequency', e.clientX*0.0001);
   }
   diapo.onclick = e => {
@@ -104,16 +107,18 @@
   };
 
   window.addEventListener("deviceorientation", handleOrientation, true);
-
+/*
   function handleOrientation(event) {
-  var absolute = event.absolute;
-  var alpha    = event.alpha;
-  var beta     = event.beta;
-  var gamma    = event.gamma;
+    var absolute = event.absolute;
+    var alpha = event.alpha;
+    var beta = event.beta;
+    var gamma = event.gamma;
 
-  imgSVG.setAttribute('y', event.alpha - 250);
-  imgSVG.setAttribute('x', event.beta - 250);
-}
+    imgSVG.setAttribute('y', 'skewY('
+      event.gamma ') skewX('
+      event.beta ')');
+    //imgSVG.setAttribute('x', event.beta - 250);
+  }*/
 </script>
 
 </html>
