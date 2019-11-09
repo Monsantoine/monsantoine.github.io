@@ -21,6 +21,7 @@ body {
   body {
     background-image: url('splash_s.jpg');
   }
+
   .mHidden {
     display: none;
   }
@@ -49,7 +50,7 @@ screen and (min-resolution: 2dppx) {
   display: block;
   position: relative;
   width: 100%;
-  height: 30%;
+  height: 300px;
   margin: 0 auto;
   overflow: hidden;
   background-size: cover;
@@ -78,7 +79,7 @@ screen and (min-resolution: 2dppx) {
   /* Animation */
 }
 
-.filtered:hover {
+#filtered:hover {
   text-decoration: underline;
   font-size: 9em;
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
@@ -97,11 +98,20 @@ screen and (min-resolution: 2dppx) {
   width: 512px;
   height: 543px;
   background: url(../img/olympian-hover.png) no-repeat;
+  animation: ani 2s linear infinite;
+}
+
+@keyframes ani {
+  0% {
+    transform: scale(0);
+  }
+
+  25%, 100% {
+    transform: scale(1);
+  }
 }
 
 #olympian:active {
-  width: 512px;
-  height: 543px;
   background: url(../img/olympian-active.png) no-repeat;
 }
 
