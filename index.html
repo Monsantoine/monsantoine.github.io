@@ -54,12 +54,11 @@
   <div id="diapo">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
       <filter id="filterImg" width="120%" height="120%">
-        <feTurbulence id="turbuImg" type="turbulence" baseFrequency="0.005" numOctaves="5" result="turbulence"/>
+        <feTurbulence id="turbuImg" type="turbulence" baseFrequency="0.005" numOctaves="5" result="turbulence" />
         <feDisplacementMap id="dispImg" in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G" />
-        <feConvolveMatrix
-          kernelMatrix="5 1 5
+        <feConvolveMatrix kernelMatrix="5 1 5
                         0 1 0
-                        0 0 -10"/>
+                        0 0 -10" />
       </filter>
       <image id="imgSVG" xlink:href="img/me.jpg" width="512px" x="50" y="50%" height="530px" filter="url(#filterImg)"></image>
     </svg>
@@ -94,8 +93,8 @@
     };
     console.log(mousePos);
     //txt.textContent = e.clientX;
-    imgSVG.setAttribute('y', e.clientY-250);
-    imgSVG.setAttribute('x', e.clientX-250);
+    imgSVG.setAttribute('y', e.clientY - 250);
+    imgSVG.setAttribute('x', e.clientX - 250);
     //turbu.setAttribute('baseFrequency', e.clientX*0.0001);
   }
   diapo.onclick = e => {
@@ -103,6 +102,19 @@
       turbu.setAttribute('baseFrequency', '0');
     }
   };
+
+  window.addEventListener("deviceorientation", handleOrientation, true);
+
+  function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha    = event.alpha;
+  var beta     = event.beta;
+  var gamma    = event.gamma;
+
+  imgSVG.setAttribute('y', event.alpha - 250);
+  imgSVG.setAttribute('x', event.beta - 250);
+}
+}
 </script>
 
 </html>
