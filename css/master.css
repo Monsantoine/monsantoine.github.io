@@ -21,6 +21,9 @@ body {
   body {
     background-image: url('splash_s.jpg');
   }
+  .mHidden {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1281px),
@@ -31,12 +34,6 @@ screen and (min-resolution: 192dpi),
 screen and (min-resolution: 2dppx) {
   body {
     background-image: url('splash_l.jpg');
-  }
-}
-
-@media handheld {
-  .mHidden {
-    display: none;
   }
 }
 
