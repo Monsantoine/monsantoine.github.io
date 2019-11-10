@@ -2,6 +2,16 @@
 <html lang="fr" dir="ltr">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151889404-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151889404-1');
+</script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Antoine Lugon</title>
@@ -32,7 +42,7 @@
         <feDisplacementMap in="MIDDLE-SPLASH_20" in2="MIDDLE-SPLASH_10" scale="25" result="MIDDLE-SPLASH_30" />
         <feComposite operator="in" in="COLOR-black" in2="MIDDLE-SPLASH_30" result="MIDDLE-SPLASH_40" />
         <!-- MIDDLE END -->
-        <feGaussianBlur stdDeviation="100" result="GAUSSIAN"/>
+        <feGaussianBlur stdDeviation="100" result="GAUSSIAN" />
 
         <!-- LIGHT EFFECTS -->
         <feMerge result="LIGHT-EFFECTS_10">
