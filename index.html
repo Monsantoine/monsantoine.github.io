@@ -69,7 +69,7 @@
   </a>
 
   <div id="diapo">
-    <svg id="svgMe" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-20 -20 20 20" width="100%" height="100%" transform="translate(0 0) skewY(0) skewX(0)">
+    <svg id="svgMe" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
       <filter id="filterImg" width="120%" height="120%">
         <feTurbulence id="turbuImg" type="turbulence" baseFrequency="0.005" numOctaves="5" result="turbulence" />
         <feDisplacementMap id="dispImg" in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G" />
@@ -78,7 +78,7 @@
                         0 1 0
                         0 0 -10" />
       </filter>
-      <image id="imgSVG" xlink:href="img/me.jpg" width="512px" x="-300" y="-80" height="530px" filter="url(#filterImg)"></image>
+      <image id="imgSVG" xlink:href="img/me.jpg" width="512px" x="0" y="0" height="530px" filter="url(#filterImg)"></image>
     </svg>
   </div>
 </body>
